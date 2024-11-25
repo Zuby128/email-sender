@@ -26,6 +26,7 @@ const MainLayout: FC<MainLayoutProps> = (props: MainLayoutProps) => {
         process.env.NEXT_PUBLIC_LOCALHOST_USER as string
       );
 
+      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
       JSON.parse(isUser!) ? setIsValid(true) : router.push("/login");
     } else {
       setIsValid(false);

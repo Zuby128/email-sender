@@ -2,14 +2,14 @@
 import Spinner from "@/components/common/Spinner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 export default function Home() {
   const initialValue = { email: "", fullName: "" };
   const [content, setContent] = useState(initialValue);
   const [load, setLoad] = useState(false);
 
-  const setValues = (e: any) => {
+  const setValues = (e: ChangeEvent<HTMLInputElement>) => {
     setContent({ ...content, [e.target.id]: e.target.value });
   };
   const send = async () => {

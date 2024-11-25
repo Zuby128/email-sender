@@ -11,7 +11,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 function Login() {
   const [login, setLogin] = useState({ email: "", password: "" });
@@ -36,7 +36,7 @@ function Login() {
     }
   };
 
-  const setBody = (e: any) => {
+  const setBody = (e: ChangeEvent<HTMLInputElement>) => {
     setLogin({ ...login, [e.target.id]: e.target.value });
   };
 

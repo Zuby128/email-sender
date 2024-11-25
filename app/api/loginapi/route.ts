@@ -1,6 +1,6 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(req: any) {
+export async function POST(req: NextRequest) {
   try {
     const { email, password } = await req.json();
 
@@ -13,6 +13,7 @@ export async function POST(req: any) {
       return NextResponse.json({ data: true });
     }
   } catch (error) {
+    console.log(error);
     return NextResponse.json({ data: null });
   }
 }
