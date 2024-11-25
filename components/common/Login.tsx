@@ -27,8 +27,6 @@ function Login() {
 
     const { data } = await response.json();
 
-    console.log("-p-p-p-p-", data, process.env.NEXT_PUBLIC_LOCALHOST_USER);
-
     if (data) {
       window.localStorage.setItem(
         process.env.NEXT_PUBLIC_LOCALHOST_USER as string,
