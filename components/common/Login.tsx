@@ -20,12 +20,14 @@ function Login() {
     const response = await fetch("/api/loginapi", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json", // Content-Type başlığını ekleyin
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(login),
     });
 
     const { data } = await response.json();
+
+    console.log("-p-p-p-p-", data, process.env.NEXT_PUBLIC_LOCALHOST_USER);
 
     if (data) {
       window.localStorage.setItem(
